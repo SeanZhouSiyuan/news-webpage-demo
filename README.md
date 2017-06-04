@@ -1,5 +1,5 @@
 # News Site Demo
-Demonstrating a responsive news web page. [Link](https://seanzhousiyuan.github.io/news-webpage-demo)
+Demonstrating a responsive news web page. [Link](https://seanzhousiyuan.github.io/responsive-news-site-demo)
 
 **Framework/tools used:**
 
