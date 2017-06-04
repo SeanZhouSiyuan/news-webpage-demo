@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- vue.js -->
+    <script src="https://unpkg.com/vue"></script>
+    <link rel="stylesheet" href="assets/styles_output.css">
+</head>
+
+<body>
+    <div id="vue-app">
+        <nav id="header" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">{{ brand }}</a>
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-nav">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="top-nav">
+                    <ul class="nav navbar-nav">
+                        <li v-for="section in sections" v-bind:class="{active: section.isActive}">
+                            <a href="#">{{ section.name }}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="headline">
+            <div class="container vertical-align">
+                <div class="col-md-5">
+                    <div class="text">
+                        <h1 class="title"><a href="#">{{ headline.title }}</a></h1>
+                        <p class="text-center"><a class="desc" href="#">{{ headline.desc }}</a></p>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <a href="#"><img class="news-img img-responsive" v-bind:src="'images/' + headline.img" v-bind:alt="headline.imgDesc"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div id="top-story" class="col-md-3">
+                    <div class="section-title">
+                        <h3 class="section-title-text item-relative">最新</h3>
+                    </div>
+                    <div class="news-title" v-for="item in topStories">
+                        <a href="#">{{ item.title }}</a>
+                    </div>
+                </div>
+
+                <div id="featured" class="col-md-6">
+                    <div class="featured-article item-relative" v-for="item in featured">
+                        <img class="img-responsive" v-bind:src="'images/' + item.img" alt="item.imgDesc">
+                        <h2 class="news-title item-absolute">
+                            <a href="#">{{ item.title }}</a>
+                        </h2>
+                    </div>
+                </div>
+
+                <div id="trending" class="col-md-3">
+                    <div class="section-title">
+                        <h3 class="section-title-text item-relative">热门</h3>
+                    </div>
+                    <div class="news-title" v-for="item in trending">
+                        <a href="#">{{ item.title }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer" class="container"></div>
+    </div>
+</body>
+
+<script src="src/vue_scripts.js"></script>
+
+</html>
