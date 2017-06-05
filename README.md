@@ -1,5 +1,5 @@
-# News Site Demo
-Demonstrating a responsive news web page. [Link](https://seanzhousiyuan.github.io/news-webpage-demo)
+# Responsive News Site Demo
+Demonstrating a responsive news web page. [Link](https://seanzhousiyuan.github.io/responsive-news-site-demo)
 
 **Framework/tools used:**
 
@@ -7,7 +7,4 @@ Demonstrating a responsive news web page. [Link](https://seanzhousiyuan.github.i
 * Vue - for data linking
 * Sass - for awesome styling
 
-Resize your browser window to see the responsive design in action! :happy:
-
-
-
+Resize your browser window to see the responsive design in action! :)

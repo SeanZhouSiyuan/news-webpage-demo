@@ -1,10 +1,10 @@
 var app = new Vue({
     el: '#vue-app',
     data: {
-        brand: 'BBC中文网',
+        brand: '新闻',
         sections: [
             { name: '主页', isActive: true },
-            { name: '中国' },
+            { name: '国内' },
             { name: '国际' },
             { name: '评论' },
             { name: '科技' },
@@ -20,14 +20,30 @@ var app = new Vue({
             imgDesc: '头条图片介绍'
         },
         topStories: [
-            { title: '头条新闻标题' },
-            { title: '头条新闻标题' },
-            { title: '头条新闻标题' },
-            { title: '头条新闻标题' }
+            {
+                title: '最新消息标题',
+                img: 'sample.jpg',
+                imgDesc: '最新消息图片介绍'
+            },
+            {
+                title: '最新消息标题',
+                img: 'sample.jpg',
+                imgDesc: '最新消息图片介绍'
+            },
+            { title: '最新消息标题' },
+            { title: '最新消息标题' }
         ],
         trending: [
-            { title: '热门新闻标题' },
-            { title: '热门新闻标题' },
+            {
+                title: '热门新闻标题',
+                img: 'sample.jpg',
+                imgDesc: '热门新闻图片介绍'
+            },
+            {
+                title: '热门新闻标题',
+                img: 'sample.jpg',
+                imgDesc: '热门新闻图片介绍'
+            },
             { title: '热门新闻标题' },
             { title: '热门新闻标题' }
         ],
@@ -54,6 +70,12 @@ var app = new Vue({
             { title: 'Title 1', desc: 'Description 1' },
             { title: 'Title 1', desc: 'Description 1' },
             { title: 'Title 1', desc: 'Description 1' }
+        ],
+        china: [
+
+        ],
+        world: [
+
         ]
     }
 });

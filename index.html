@@ -7,19 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
     <!-- jQuery library -->
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
     <!-- Bootstrap JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
     <!-- vue.js -->
-    <script src="assets/vue.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
     <link rel="stylesheet" href="assets/styles_output.css">
 </head>
 
 <body>
     <div id="vue-app">
-        <nav id="header" class="navbar navbar-inverse navbar-fixed-top">
+        <nav id="header" class="section navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">{{ brand }}</a>
@@ -39,7 +42,7 @@
             </div>
         </nav>
 
-        <div id="headline">
+        <div id="headline" class="section">
             <div class="container vertical-align">
                 <div class="col-md-5">
                     <div class="text">
@@ -55,36 +58,69 @@
 
         <div class="container">
             <div class="row">
-                <div id="top-story" class="col-md-3">
+                <div id="top-story" class="section col-sm-6 col-md-3">
                     <div class="section-title">
                         <h3 class="section-title-text item-relative">最新</h3>
                     </div>
                     <div class="news-title" v-for="item in topStories">
-                        <a href="#">{{ item.title }}</a>
+                        <a href="#">
+                            <div class="row">
+                                <img class="img-responsive" v-if="item.img" v-bind:class="{ 'col-xs-5 col-md-12': item.img, 'col-md-12': !item.img }" v-bind:src="'images/' + item.img"
+                                    v-bind:alt="item.imgDesc">
+                                <div v-bind:class="{ 'col-xs-7 col-md-12': item.img, 'col-md-12': !item.img }">{{ item.title }}</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
-                <div id="featured" class="col-md-6">
-                    <div class="featured-article item-relative" v-for="item in featured">
-                        <img class="img-responsive" v-bind:src="'images/' + item.img" alt="item.imgDesc">
-                        <h2 class="news-title item-absolute">
-                            <a href="#">{{ item.title }}</a>
-                        </h2>
-                    </div>
-                </div>
-
-                <div id="trending" class="col-md-3">
+                <div id="trending" class="section col-sm-6 col-md-3 float-right">
                     <div class="section-title">
                         <h3 class="section-title-text item-relative">热门</h3>
                     </div>
                     <div class="news-title" v-for="item in trending">
-                        <a href="#">{{ item.title }}</a>
+                        <a href="#">
+                            <div class="row">
+                                <img class="img-responsive" v-if="item.img" v-bind:class="{ 'col-xs-5 col-md-12': item.img, 'col-md-12': !item.img }" v-bind:src="'images/' + item.img"
+                                    v-bind:alt="item.imgDesc">
+                                <div v-bind:class="{ 'col-xs-7 col-md-12': item.img, 'col-md-12': !item.img }">{{ item.title }}</div>
+                            </div>
+                        </a>
                     </div>
                 </div>
+
+                <div id="featured" class="section col-sm-12 col-md-6">
+                    <div class="row">
+                        <div class="featured-article item-relative col-sm-6 col-md-12" v-for="item in featured">
+                            <a href="#">
+                                <img class="img-responsive" v-bind:src="'images/' + item.img" alt="item.imgDesc">
+                                <h2 class="news-title item-absolute">{{ item.title }}</h2>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="region section row">
+                <div class="col-md-12">
+                    <h2 class="section-title text-left">国内</h2>
+                </div>
+                <div class="col-md-3" v-for="item in china"></div>
+            </div>
+            <div class="region section row">
+                <div class="col-md-12">
+                    <h2 class="section-title text-left">国际</h2>
+                </div>
+                <div class="col-md-3" v-for="item in world"></div>
+            </div>
+            <div class="region section row">
+                <div class="col-md-12">
+                    <h2 class="section-title text-left">评论</h2>
+                </div>
+                <div class="col-md-3" v-for="item in world"></div>
             </div>
         </div>
 
-        <div id="footer" class="container"></div>
+        <div id="footer"></div>
     </div>
 </body>
 
