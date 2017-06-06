@@ -72,10 +72,48 @@ var app = new Vue({
             { title: 'Title 1', desc: 'Description 1' }
         ],
         china: [
-
+            {
+                title: '国内新闻标题',
+                img: 'sample.jpg',
+                imgDesc: '国内新闻图片介绍'
+            },
+            {
+                title: '国内新闻标题',
+                img: 'sample.jpg',
+                imgDesc: '国内新闻图片介绍'
+            },
+            {
+                title: '国内新闻标题',
+                img: 'sample.jpg',
+                imgDesc: '国内新闻图片介绍'
+            },
+            {
+                title: '国内新闻标题',
+                img: 'sample.jpg',
+                imgDesc: '国内新闻图片介绍'
+            }
         ],
         world: [
-
+            {
+                title: '国际新闻标题',
+                img: 'sample.jpg',
+                imgDesc: '国际新闻图片介绍'
+            },
+            {
+                title: '国际新闻标题',
+                img: 'sample.jpg',
+                imgDesc: '国际新闻图片介绍'
+            },
+            {
+                title: '国际新闻标题',
+                img: 'sample.jpg',
+                imgDesc: '国际新闻图片介绍'
+            },
+            {
+                title: '国际新闻标题',
+                img: 'sample.jpg',
+                imgDesc: '国际新闻图片介绍'
+            }
         ]
     }
 });
