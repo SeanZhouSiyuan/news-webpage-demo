@@ -1,0 +1,118 @@
+.headline-desc {
+  font-size: 24px;
+  color: #777; }
+
+.news-desc {
+  font-size: 14px;
+  color: #777; }
+
+.news-img {
+  margin-bottom: 10px; }
+
+body {
+  font-size: 16px; }
+
+.item-relative {
+  position: relative; }
+
+.item-absolute {
+  position: absolute; }
+
+.float-right {
+  float: right; }
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center; }
+
+a {
+  color: #333333;
+  text-decoration: none; }
+  a:hover {
+    color: #c00;
+    text-decoration: none; }
+
+.parallelogram {
+  -webkit-transform: skew(-10deg);
+  -moz-transform: skew(-10deg);
+  transform: skew(-10deg); }
+
+.section {
+  margin-bottom: 40px; }
+
+#headline {
+  background-color: #f8f8f8; }
+
+#top-story, #trending {
+  margin-bottom: 40px; }
+  #top-story .section-title, #trending .section-title {
+    text-align: center; }
+  #top-story .section-title-text, #trending .section-title-text {
+    margin-top: 0;
+    display: inline-block;
+    padding: 0.3em 0.9em;
+    color: white;
+    background-color: #333333; }
+  #top-story .news-article, #trending .news-article {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd; }
+  #top-story .news-article:last-child, #trending .news-article:last-child {
+    border-bottom: none; }
+
+#featured .featured-article {
+  margin-bottom: 20px; }
+  #featured .featured-article:last-child {
+    margin-bottom: 40px; }
+#featured .news-title {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%); }
+
+.region .section-title {
+  padding-top: 6px;
+  border-top: 4px solid #ddd;
+  margin-top: 0; }
+.region .region-article {
+  margin-bottom: 20px; }
+  .region .region-article:last-child {
+    margin-bottom: 40px; }
+
+@media (max-width: 425px) {
+  h1 {
+    font-size: 28px; }
+
+  h2 {
+    font-size: 22px; }
+
+  h3 {
+    font-size: 16px; }
+
+  body {
+    font-size: 14px; }
+
+  .headline-desc {
+    display: none; }
+
+  .news-desc {
+    font-size: 12px; }
+
+  .news-img {
+    padding-right: 0;
+    margin-bottom: 0; }
+
+  #featured .featured-article, .region .region-article {
+    margin-bottom: 10px; }
+    #featured .featured-article:last-child, .region .region-article:last-child {
+      margin-bottom: 20px; }
+
+  .section, #top-story, #trending {
+    margin-bottom: 20px; } }
+@media screen and (min-width: 992px) {
+  .vertical-align {
+    display: flex;
+    align-items: center; } }
+@media (max-width: 768px) {
+  .omit-padding {
+    padding-left: 0;
+    padding-right: 0; } }
+
+/*# sourceMappingURL=styles.css.map */
