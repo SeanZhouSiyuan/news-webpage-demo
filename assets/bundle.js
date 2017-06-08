@@ -88,7 +88,7 @@
 var app = new Vue({
     el: '#vue-app',
     data: {
-        brand: '新闻',
+        brand: '公司名称',
         sections: [{ name: '主页', isActive: true }, { name: '国内' }, { name: '国际' }, { name: '评论' }, { name: '科技' }, { name: '财经' }, { name: '图辑' }, { name: '音频' }, { name: '视频' }],
         headline: {
             title: '头条新闻标题',
@@ -180,7 +180,8 @@ var app = new Vue({
             desc: '评论观点概述',
             img: 'sample.jpg',
             imgDesc: '评论图片介绍'
-        }]
+        }],
+        navLinks: [{ title: '关于我们' }, { title: '隐私政策' }, { title: '联系我们' }, { title: '服务协议' }, { title: '版权声明' }, { title: '加入我们' }]
     }
 });
 
