@@ -135,7 +135,10 @@ a {
       margin-bottom: 20px; }
 
   .section, #top-story, #trending {
-    margin-bottom: 20px; } }
+    margin-bottom: 20px; }
+
+  .region .section-title {
+    border-top-width: 3px; } }
 @media (min-width: 992px) {
   .vertical-align-middle {
     display: flex;
