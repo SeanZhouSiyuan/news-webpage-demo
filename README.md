@@ -6,6 +6,7 @@ Demonstrating a responsive news web page. [Link](https://seanzhousiyuan.github.i
 * Bootstrap - for navigation bar and page layout
 * Vue - for data linking
 * Sass - for awesome styling
+* Webpack - for module bundling
 
 Resize your browser window to see the responsive design in action! :)
 
