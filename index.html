@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hans">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Responsive New Site</title>
+    <title>新闻</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
@@ -22,7 +22,7 @@
 
 <body>
     <div id="vue-app">
-        <nav id="header" class="section navbar navbar-inverse navbar-fixed-top">
+        <nav id="header" class="section navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand brand" href="#">{{ brand }}</a>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="collapse navbar-collapse" id="top-nav">
                     <ul class="nav navbar-nav">
-                        <li v-for="section in sections" v-bind:class="{active: section.isActive}">
+                        <li v-for="section in sections" v-bind:class="{current: section.isActive}">
                             <a href="#">{{ section.name }}</a>
                         </li>
                     </ul>
@@ -43,15 +43,17 @@
         </nav>
 
         <div id="headline" class="section">
-            <div class="container vertical-align-middle omit-padding">
-                <div class="col-md-5">
-                    <div class="text">
-                        <h1 class="news-title"><a href="#">{{ headline.title }}</a></h1>
-                        <p class="text-center"><a class="headline-desc" href="#">{{ headline.desc }}</a></p>
+            <div class="container">
+                <div class="row vertical-align-middle omit-padding">
+                    <div class="col-sm-5">
+                        <a href="#">
+                            <h1 class="news-header">{{ headline.title }}</h1>
+                            <div class="text-center news-desc">{{ headline.desc }}</div>
+                        </a>
                     </div>
-                </div>
-                <div class="col-md-7 omit-padding">
-                    <a href="#"><img class="headline-img img-responsive" v-bind:src="'images/' + headline.img" v-bind:alt="headline.imgDesc"></a>
+                    <div class="col-sm-7 omit-padding">
+                        <a href="#"><img class="headline-img img-responsive" v-bind:src="'images/' + headline.img" v-bind:alt="headline.imgDesc"></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -67,7 +69,7 @@
                             <div class="row">
                                 <img class="news-img img-responsive" v-if="item.img" v-bind:class="{ 'col-xs-5 col-md-12': item.img, 'col-md-12': !item.img }"
                                     v-bind:src="'images/' + item.img" v-bind:alt="item.imgDesc">
-                                <div class="news-title" v-bind:class="{ 'col-xs-7 col-md-12': item.img, 'col-md-12': !item.img }">{{ item.title }}</div>
+                                <div class="news-header" v-bind:class="{ 'col-xs-7 col-md-12': item.img, 'col-md-12': !item.img }">{{ item.title }}</div>
                             </div>
                         </a>
                     </div>
@@ -82,7 +84,7 @@
                             <div class="row">
                                 <img class="news-img img-responsive" v-if="item.img" v-bind:class="{ 'col-xs-5 col-md-12': item.img, 'col-md-12': !item.img }"
                                     v-bind:src="'images/' + item.img" v-bind:alt="item.imgDesc">
-                                <div class="news-title" v-bind:class="{ 'col-xs-7 col-md-12': item.img, 'col-md-12': !item.img }">{{ item.title }}</div>
+                                <div class="news-header" v-bind:class="{ 'col-xs-7 col-md-12': item.img, 'col-md-12': !item.img }">{{ item.title }}</div>
                             </div>
                         </a>
                     </div>
@@ -90,10 +92,10 @@
 
                 <div id="featured" class="col-sm-12 col-md-6">
                     <div class="row">
-                        <div class="featured-article item-relative col-sm-6 col-md-12" v-for="item in featured">
+                        <div class="featured-article position-relative col-sm-6 col-md-12" v-for="item in featured">
                             <a href="#">
                                 <img class="featured-img img-responsive" v-bind:src="'images/' + item.img" alt="item.imgDesc">
-                                <h2 class="news-title item-absolute">{{ item.title }}</h2>
+                                <h2 class="news-header position-absolute">{{ item.title }}</h2>
                             </a>
                         </div>
                     </div>
@@ -101,59 +103,53 @@
             </div>
             <div class="region row">
                 <div class="col-md-12">
-                    <h2 class="section-title text-left">国内</h2>
+                    <h2 class="section-title position-relative text-left">国内</h2>
                 </div>
                 <div class="region-article col-sm-6 col-md-3" v-for="item in china">
                     <div class="row">
                         <img class="col-xs-5 col-sm-12 news-img img-responsive" v-bind:src="'images/' + item.img" v-bind:alt="item.imgDesc">
-                        <div class="news-title col-xs-7 col-sm-12"><a href="#">{{ item.title }}</a></div>
+                        <div class="news-header col-xs-7 col-sm-12"><a href="#">{{ item.title }}</a></div>
                     </div>
                 </div>
             </div>
             <div class="region row">
                 <div class="col-md-12">
-                    <h2 class="section-title text-left">国际</h2>
+                    <h2 class="section-title position-relative text-left">国际</h2>
                 </div>
                 <div class="region-article col-sm-6 col-md-3" v-for="item in world">
                     <div class="row">
                         <img class="col-xs-5 col-sm-12 news-img img-responsive" v-bind:src="'images/' + item.img" v-bind:alt="item.imgDesc">
-                        <div class="news-title col-xs-7 col-sm-12"><a href="#">{{ item.title }}</a></div>
+                        <div class="news-header col-xs-7 col-sm-12"><a href="#">{{ item.title }}</a></div>
                     </div>
                 </div>
             </div>
             <div class="region row">
                 <div class="col-md-12">
-                    <h2 class="section-title text-left">评论</h2>
+                    <h2 class="section-title position-relative text-left">评论</h2>
                 </div>
                 <div class="region-article col-sm-6 col-md-3" v-for="item in remarks">
                     <div class="row">
                         <img class="col-xs-5 col-sm-12 news-img img-responsive" v-bind:src="'images/' + item.img" v-bind:alt="item.imgDesc">
-                        <div class="news-title col-xs-7 col-sm-12"><a href="#">{{ item.title }}<br><span class="news-desc">{{ item.desc }}</span></a></div>
+                        <div class="news-header col-xs-7 col-sm-12"><a href="#">{{ item.title }}<br><span class="news-desc">{{ item.desc }}</span></a></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div id="footer">
+        <div id="footer" class="position-relative">
             <div class="container">
-                <div class="row nav-bottom-wrapper vertical-align-bottom">
-                    <div class="col-xs-12 col-md-9">
-                        <ul class="row list-unstyled nav-bottom">
-                            <li class="nav-links col-xs-4 col-md-2" v-for="item in navLinks">
-                                <a href="#">{{ item.title }}</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="brand-wrapper hidden-xs hidden-sm col-md-3">
-                        <div class="brand text-center"><a href="#">{{ brand }}</a></div>
-                    </div>
-                </div>
-                <div class="copyright text-center">© {{ brand }} 2017</div>
+                <div class="brand position-absolute"><a href="#">{{ brand }}</a></div>
+                <div class="copyright text-center">{{ copyright }}</div>
+                <ul class="list-unstyled list-inline nav-bottom text-center">
+                    <li class="nav-links" v-for="item in navLinks">
+                        <a href="#">{{ item.title }}</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 </body>
 
-<script src="assets/bundle.js"></script>
+<script src="assets/app.js"></script>
 
 </html>

@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -181,17 +181,25 @@ var app = new Vue({
             img: 'sample.jpg',
             imgDesc: '评论图片介绍'
         }],
-        navLinks: [{ title: '关于我们' }, { title: '隐私政策' }, { title: '联系我们' }, { title: '服务协议' }, { title: '版权声明' }, { title: '加入我们' }]
+        navLinks: [{ title: '关于我们' }, { title: '隐私政策' }, { title: '服务协议' }, { title: '版权声明' }, { title: '加入我们' }],
+        copyright: '© 2017 公司名称'
     }
 });
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
+__webpack_require__(2);
 __webpack_require__(1);
 __webpack_require__(0);
 
